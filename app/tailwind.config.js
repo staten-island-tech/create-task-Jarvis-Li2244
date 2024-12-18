@@ -8,4 +8,11 @@ export default {
     extend: {},
   },
   plugins: [],
+  theme: {
+    extend: {
+      fontFamily: {
+        creepster: ['Creepster', 'serif'],
+      },
+    },
+  },
 }
