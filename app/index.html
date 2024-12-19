@@ -6,12 +6,35 @@
     <title>Vite App</title>
   </head>
   <body class="bg-blue-400 text-white">
-    <div class="w-[100vw] h-[100vh] bg-black opacity-60 text-center align-middle justify-center flex flex-col">
+    <div class="w-[100vw] h-[100vh] text-center bg-black opacity-60 absolute">
+      <div class="absolute w-[100vw] text-left p-3">
+        <h1 class="text-4xl font-creepster font-semibold">Player A : 1</h1>
+      </div>
+
+      <div class="absolute w-[100vw] text-right p-3">
+        <h1 class="text-4xl font-creepster font-semibold">Player B : 1</h1>
+      </div>
+
+      <div class="w-[100vw] h-[100vh] text-center align-middle justify-center flex flex-col ">
+        <button class="text-8xl font-creepster font-extrabold m-3">Play Again</button>
+        <button class="text-2xl">Restart Game</button>
+      </div>
+    </div>
+
+    <div class="w-[100vw] h-[100vh] text-center bg-black opacity-60 align-middle justify-center flex flex-col absolute">
       <h1 class="text-8xl font-creepster font-extrabold underline m-3">YAHTZEE</h1>
-      <button class="text-2xl m-3">Start Game</button>
+      <button class="text-2xl">Start Game</button>
       <button class="text-2xl">How to Play</button>
       <button class="text-2xl">Credits</button>
+    </div>
+  
+    <div class="w-[60vw] h-[100vh] align-middle justify-center flex flex-col absolute">
+
+    </div>
+    <div class="w-[40vw] h-[100vh] ml-[60vw] align-middle justify-center flex flex-col absolute">
+      
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
+
