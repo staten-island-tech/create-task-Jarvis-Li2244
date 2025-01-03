@@ -3,3 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.bottom-space{
+    height: 10%
+}
+
+.first-column{
+    height: 90%
+}
+
+.second-column{
+    height: 90%
+}
+
+.final-score-a{
+    width: 45%
+}
+
+.final-score-b{
+    width: 45%
+}
