@@ -42,40 +42,63 @@ document.addEventListener("DOMContentLoaded", () => {
         total: []
     }
 
-    let dice = {
-        dice_1: {
+    let dice = [
+        {   
+            name: "dice_1",
+            value: [5],
+            position: "keep"
+        },
+        {   
+            name: "dice_2",
             value: [],
             position: "roll"
         },
-        dice_2: {
+        {   
+            name: "dice_3",
             value: [],
             position: "roll"
         },
-        dice_3: {
+        {   
+            name: "dice_4",
             value: [],
             position: "roll"
         },
-        dice_4: {
+        {   
+            name: "dice_5",
             value: [],
             position: "roll"
-        },
-        dice_5: {
-            value: [],
-            position: "roll"
+        }
+    ]
+    
+    function startGame() {
+
+        function gameTurn() {
+            DOMSelectors.howtoplay.addEventListener("click", function(event) {
+                
+            })
+
+            let roll_count = 0
+            DOMSelectors.rollbutton.addEventListener("click", function(event) {
+                roll_count += 1
+                if (roll_count < 3) {
+                    for (let i = 0; i < 5; i++) {
+                        if (dice[i].position == "roll") {
+                            dice[i].value = []
+                            dice[i].value.push(Math.floor(Math.random() * (6 - 1 + 1) ) + 1)
+                        }
+                    }
+                } else {
+                    DOMSelectors.rollbutton.disabled = true
+                    DOMSelectors.rollbutton.classList.add("dark")
+                }
+            })
+        }
+
+        function gameEnd() {
+
         }
     }
 
-    DOMSelectors.howtoplay.addEventListener("click", function(event) {
-        
-    })
-
-    DOMSelectors.rollbutton.addEventListener("click", function(event) {
-        let vals = []
-        for (let i = 1; i < 6; i++) {
-            vals.push([Math.floor(Math.random() * (6 - 1 + 1) ) + 1])
-        }
-        console.log(vals)
-    })
 
 
 
