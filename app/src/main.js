@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     DOMSelectors.rollbutton.addEventListener("click", function(event) {
-
-        for (let i = 0; i < 6; i++) {
-            dice.dice_1.value = [Math.floor(Math.random() * (6 - 1 + 1) ) + 1]
+        let vals = []
+        for (let i = 1; i < 6; i++) {
+            vals.push([Math.floor(Math.random() * (6 - 1 + 1) ) + 1])
         }
-        console.log(dice)
+        console.log(vals)
     })
 
 
