@@ -28,6 +28,17 @@
     height: 7.5%
 }
 
+.column-buttons-a{
+    width: 75%;
+    height: 7.5%
+}
+
+.column-buttons-b{
+    width: 75%;
+    height: 7.5%
+}
+
+
 .dark{
     filter: brightness(80%);
 }
