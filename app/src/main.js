@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         player_a_buttons: document.querySelectorAll(".column-buttons-a"),
         player_b_buttons: document.querySelectorAll(".column-buttons-b"),
         player_a_total: document.querySelector(".player-a-score"),
-        player_b_total: document.querySelector(".player-b-score")
+        player_b_total: document.querySelector(".player-b-score"),
+        newGame: document.querySelector(".newGame")
     }
 
     let player_a_score = {
@@ -702,19 +703,46 @@ document.addEventListener("DOMContentLoaded", () => {
         DOMSelectors.player_a_buttons.forEach(button => {if (button.getAttribute("id") != "pressed"){endA = false}})
         DOMSelectors.player_b_buttons.forEach(button => {if (button.getAttribute("id") != "pressed"){endB = false}})
         if (endA && endB) {
-            gameEnd()
+            winner_display()
         } else {
             turn *= -1
             roll_count = 0
         }
     }
         
+    function winner_display() {
+        
+        let winner = ""
+        if (player_a_score.total[0] > player_b_score.total[0]) {
+            winner = "A"
+        } else if (player_a_score.total[0] < player_b_score.total[0]) {
+            winner = "B"
+        } else {
+            winner = "N"
+        }
+
+        let winner_div = document.querySelector(".winner-div")
+        winner_div.classList.remove("hidden")
+        if (winner != "N") {
+            winner_div.firstElementChild.textContent = `Player ${winner} won by ${Math.abs(player_a_score.total[0] - player_b_score.total[0])}`
+        } else {
+            winner_div.firstElementChild.textContent = "No Player Won"
+        }
+    }
+
+    DOMSelectors.newGame.addEventListener("click", function(event) {
+        let winner_div = document.querySelector(".winner-div")
+        winner_div.classList.add("hidden")
+
+        gameEnd()
+    })
+
     function gameEnd() {
         resetDice()
         resetScores()
         resetButtons()
         resetBonus()
-
+        
         disableButtons()
         turn *= -1
         roll_count = 0
