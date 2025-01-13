@@ -1,0 +1,164 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bottom-space{
+    height: 10%
+}
+
+.first-column{
+    height: 90%
+}
+
+.second-column{
+    height: 90%
+}
+
+.final-score-a{
+    width: 45%
+}
+
+.final-score-b{
+    width: 45%
+}
+
+.column-buttons{
+    width: 75%;
+    height: 7.5%
+}
+
+.column-buttons-a{
+    width: 75%;
+    height: 7.5%
+}
+
+.column-buttons-b{
+    width: 75%;
+    height: 7.5%
+}
+
+.column-buttons-bonus{
+    width: 75%;
+    height: 7.5%
+}
+
+
+
+#unpressed{
+    font-size: 1.5vw
+}
+
+.player-a-score{
+    font-size: 1.4vw
+}
+.player-b-score{
+    font-size: 1.4vw
+}
+
+.player-bonus{
+    font-size: 1.3vw;
+}
+
+
+
+.title{
+    font-size: 4vw;
+}
+
+.label_header{
+    font-size: 2.5vw;
+
+}
+
+.label{
+    font-size: 1.2vw;
+    line-height: 1.2vw;
+}
+
+.sm{
+    font-size: 1.1vw
+}
+
+.xs{
+    font-size: 1vw
+}
+
+
+
+
+.dark{
+    filter: brightness(80%);
+}
+
+
+.scrollable-div {
+    padding: 2vw;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+.scrollable-div {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+
+.scrollable-div::-webkit-scrollbar {
+    display: none;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 3vw;
+    position: relative;
+    cursor: pointer;
+    margin: 0.5vw;
+}
+  
+.line {
+    background-color: #333;
+    height: 0.4vw;
+    width: 2vw;
+    margin: 1vw;
+}
+  
+.line1 {
+    transform: rotate(45deg);
+    position: absolute;
+}
+  
+.line2 {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+
+h2{
+    color: black;
+    font-size: 4vw;
+    margin: 1vw;
+}
+
+h3{
+    color: black;
+    font-size: 3vw;
+    margin-top: 3vw;
+}
+
+h4{
+    color: black;
+    font-size: 2vw;
+    margin-top: 2vw;
+}
+
+p{
+    color: black;
+    margin-bottom: 1vw;
+    font-size: 1.5vw
+}

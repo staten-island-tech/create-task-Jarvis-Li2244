@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Vite App</title>
+  </head>
+  <body class="bg-gray-800 text-purple-400">
+
+    <div class="w-[100vw] h-[100vh] text-center justify-evenly flex-col flex items-center">
+
+      <div class="w-full h-1/6 items-center flex flex-col text-center justify-center">
+        <h1 class="title text-6xl font-creepster font-extrabold">YAHTZEE</h1>
+        <button class="label how-to-play font-creepster font-semibold">How to Play</button>
+      </div>
+
+      <div class="scrollable-div w-[80vw] h-[50vw] rounded-lg bg-white absolute hidden">
+        <button class="close-button">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+        </button>
+        <h2 class="font-creepster font-extrabold">Objective:</h2>
+        <p class="font-creepster">The goal of Yahtzee is to score the highest total points by rolling five dice and filling out the scorecard with different combinations of dice rolls. Each player has 13 turns to roll the dice and try to achieve these combinations.</p>
+
+        <h2 class="font-creepster font-extrabold">Gameplay:</h2>
+        
+        <p class="font-creepster">Players take turns rolling the dice.
+        On each turn, the player gets up to three rolls of the dice.</p>
+        <h4 class="font-creepster">First roll: <p class="font-creepster">The player rolls all five dice.</p></h4>
+        <h4 class="font-creepster">Second roll: <p class="font-creepster">After the first roll, the player can choose to keep some dice by clicking on them and re-roll others. Up to five dice can be rolled, and any number can be kept.</p></h4>
+        <h4 class="font-creepster">Third roll: <p class="font-creepster">The player may again choose to keep some dice by clicking on them and re-roll the others. After the third roll, the player must choose a category on the scorecard to record their score based on the dice rolled.</p></h4>
+        
+        <h2 class="font-creepster font-extrabold">Categories:</h2> 
+        <p class="font-creepster">There are 13 categories on the scorecard, split into two sections:</p>
+        
+        <h3 class="font-creepster font-semibold">Left Section:</h3>
+        
+        <h4 class="font-creepster">Ones: <p class="font-creepster">Add up all the dice showing the number 1.</p></h4>
+        <h4 class="font-creepster">Twos: <p class="font-creepster">Add up all the dice showing the number 2.</p></h4>
+        <h4 class="font-creepster">Threes: <p class="font-creepster">Add up all the dice showing the number 3.</p></h4>
+        <h4 class="font-creepster">Fours: <p class="font-creepster">Add up all the dice showing the number 4.</p></h4>
+        <h4 class="font-creepster">Fives: <p class="font-creepster">Add up all the dice showing the number 5.</p></h4>
+        <h4 class="font-creepster">Sixes: <p class="font-creepster">Add up all the dice showing the number 6.</p></h4>
+        <h4 class="font-creepster font-semibold">Bonus for Upper Section: </h4><p class="font-creepster">If the total score in the upper section is 63 or higher, the player earns a bonus of 35 points.</p>
+        
+        <h3 class="font-creepster font-semibold">Right Section:</h3>
+        
+        <h4 class="font-creepster">Three of a Kind: <p class="font-creepster">At least three dice with the same number. Score the total of all five dice.</p></h4>
+        <h4 class="font-creepster">Four of a Kind: <p class="font-creepster">At least four dice with the same number. Score the total of all five dice.</p></h4>
+        <h4 class="font-creepster">Full House: <p class="font-creepster">A set of three of one number and two of another number. Score 25 points.</p></h4>
+        <h4 class="font-creepster">Small Straight: <p class="font-creepster">Four consecutive numbers (e.g., 1-2-3-4). Score 30 points.</p></h4>
+        <h4 class="font-creepster">Large Straight: <p class="font-creepster">Five consecutive numbers (e.g., 1-2-3-4-5). Score 40 points.</p></h4>
+        <h4 class="font-creepster">Yahtzee: <p class="font-creepster">Five of the same number. Score 50 points.</p></h4>
+        <h4 class="font-creepster">Chance: <p class="font-creepster">Any combination of dice. Score the total of all five dice.</p></h4>
+        
+        <h2 class="font-creepster font-extrabold">Scoring:</h2>
+        
+        <p class="font-creepster">After each turn, the player chooses one category to score based on their roll.
+        The score is recorded on the scorecard, and that category is "locked out" for the rest of the game.
+        If the player cannot or chooses not to score for a particular category, they must mark it with a 0.</p>
+        
+        <h4 class="font-creepster font-semibold">End of the Game:</h4>
+        
+        <p class="font-creepster">The game ends when all players have filled in all 13 categories on their scorecard.
+        Players then total their scores in each section (Left and Right).</p>
+        
+        <h2 class="font-creepster font-extrabold">Winner:</h2>
+        <p class="font-creepster">The player with the highest total score at the end of the game wins.</p>
+        
+      </div>
+
+      <div class="w-[80vw] h-[43vw] bg-gray-900 rounded-lg flex items-center justify-evenly">
+
+        <!-- Score Table -->
+        <div class="w-[32vw] h-[37vw] bg-purple-300 rounded-lg border-4 border-violet-500 m-1 flex flex-wrap items-center justify-evenly">
+          
+            <!-- First Column -->
+            <div class="first-column w-1/2 h-5/6 border-violet-500 border-r-2 border-b-4 flex flex-wrap items-center justify-evenly">
+
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly text-gray-800">
+                <h1 class="label_header text-purple-300 font-creepster font-extrabold">Shh!</h1>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label one text-1xl font-bold">Ones</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label two text-1xl font-bold">Twos</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label three text-1xl font-bold">Threes</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label four text-1xl font-bold">Fours</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label five text-1xl font-bold">Fives</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label six text-1xl font-bold">Sixes</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label bonus text-1xl font-bold">Bonus (+35)</h1>
+                </div>
+
+              </div>
+
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly">
+                <h1 class="label_header text-gray-800 font-creepster font-extrabold underline">A</h1>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-one text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-two text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-three text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-four text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-five text-1xl font-bold">0</h1>
+                </button>
+                
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-six text-1xl font-bold">0</h1>
+                </button>
+
+                <div class="column-buttons-bonus bg-violet-400 rounded-lg flex items-center justify-evenly text-red-700">
+                  <h1 id="player-a-bonus" class="player-bonus text-1xl font-bold">0/63</h1>
+                </div>
+
+              </div>
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly">
+                <h1 class="label_header text-gray-800 font-creepster font-extrabold underline">B</h1>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-one text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-two text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-three text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-four text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-five text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-six text-1xl font-bold">0</h1>
+                </button>
+                
+                <div class="column-buttons-bonus bg-violet-400 rounded-lg flex items-center justify-evenly text-red-700">
+                  <h1 id="player-b-bonus" class="player-bonus text-1xl font-bold">0/63</h1>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Second Column -->
+            <div class="second-column w-1/2 border-violet-500 border-l-2 border-b-4 flex flex-wrap items-center justify-evenly">
+              
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly text-gray-800">
+                <h1 class="label_header text-purple-300 font-creepster font-extrabold">Shh!</h1>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label three-of-a-kind sm font-bold">3 of a Kind</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label four-of-a-kind sm font-bold">4 of a Kind</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label full-house sm font-bold">Full House</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label small-straight sm font-bold">Small Straight</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label large-straight sm font-bold">Large Straight</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label yahtzee font-bold">Yahtzee</h1>
+                </div>
+
+                <div class="column-buttons flex items-center justify-evenly">
+                  <h1 class="label chance font-bold">Chance</h1>
+                </div>
+
+              </div>
+
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly">
+                <h1 class="label_header text-gray-800 font-creepster font-extrabold underline">A</h1>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-three-of-a-kind text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-four-of-a-kind text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-full-house text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-small-straight text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-large-straight text-1xl font-bold">0</h1>
+                </button>
+                
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-yahtzee text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-chance text-1xl font-bold">0</h1>
+                </button>
+
+              </div>
+              <div class="label_header_header w-1/3 h-full flex flex-col flex-wrap items-center justify-evenly">
+                <h1 class="label_header text-gray-800 font-creepster font-extrabold underline">B</h1>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-three-of-a-kind text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-four-of-a-kind text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-full-house text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-small-straight text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-large-straight text-1xl font-bold">0</h1>
+                </button>
+
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-yahtzee text-1xl font-bold">0</h1>
+                </button>
+                
+                <button class="column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+                  <h1 id="unpressed" class="player-chance text-1xl font-bold">0</h1>
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- Final Score Section -->
+            <div class="bottom-space w-full border-violet-500 flex items-center justify-evenly">
+
+              <!-- Player A Score -->
+              <div class="final-score-a h-5/6 text-gray-800 flex items-center justify-evenly">
+                <h1 class="label text-1xl font-creepster font-semibold">Player A Total</h1>
+
+                <div class="w-1/3 h-5/6 bg-violet-400 rounded-lg flex items-center justify-evenly">
+                  <h1 class="player-a-score text-1xl font-bold">0</h1>
+                </div>
+
+              </div>
+
+              <!-- Player B Score -->
+              <div class="final-score-b h-5/6 text-gray-800 flex items-center justify-evenly">
+                <h1 class="label text-1xl font-creepster font-semibold">Player B Total</h1>
+
+                <div class="w-1/3 h-5/6 bg-violet-400 rounded-lg flex items-center justify-evenly">
+                  <h1 class="player-b-score text-1xl font-bold">0</h1>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- Final Score Section End -->
+         
+        </div>
+
+        <!-- Game -->
+        <div class="w-[42vw] h-[37vw] bg-purple-300 rounded-lg border-4 border-violet-500 m-1 flex flex-col items-center justify-center">
+
+          <div class="w-[40vw] h-[30vw] bg-purple-300 flex items-center justify-evenly flex-wrap">
+            
+            <div id="dice_1" class="dice w-[7vw] h-[7vw] rounded-2xl border-4 bg-white">
+              <img src="./images/dice-unknown.png" alt="Dice Unknown">
+            </div>
+            <div id="dice_2" class="dice w-[7vw] h-[7vw] rounded-2xl border-4 bg-white">
+              <img src="./images/dice-unknown.png" alt="Dice Unknown">
+            </div>
+            <div id="dice_3" class="dice w-[7vw] h-[7vw] rounded-2xl border-4 bg-white">
+              <img src="./images/dice-unknown.png" alt="Dice Unknown">
+            </div>
+            <div id="dice_4" class="dice w-[7vw] h-[7vw] rounded-2xl border-4 bg-white">
+              <img src="./images/dice-unknown.png" alt="Dice Unknown">
+            </div>
+            <div id="dice_5" class="dice w-[7vw] h-[7vw] rounded-2xl border-4 bg-white">
+              <img src="./images/dice-unknown.png" alt="Dice Unknown">
+            </div>
+
+          </div>
+
+          <div class="w-full h-1/6 bg-purple-300 flex items-center justify-evenly">
+            
+            <button class="w-3/5 h-1/3 roll-button bg-violet-400 rounded-lg flex items-center justify-evenly text-white">
+              <h1 class="label text-1xl font-bold">Roll Dice</h1>
+            </button>
+
+          </div>
+
+          
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+
