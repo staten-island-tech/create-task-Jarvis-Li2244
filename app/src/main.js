@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const DOMSelectors = {
         howtoplay: document.querySelector(".how-to-play"),
@@ -578,7 +579,6 @@ document.addEventListener("DOMContentLoaded", () => {
         )
     }
 
-
     DOMSelectors.howtoplay.addEventListener("click", function(event) {
         let instructions = document.querySelector(".scrollable-div")
         instructions.classList.remove("hidden")
@@ -587,7 +587,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let instructions = document.querySelector(".scrollable-div")
         instructions.classList.add("hidden")
     })
-    
 
     function disableButtons() {
         DOMSelectors.player_a_buttons.forEach(button => button.disabled = true)
@@ -665,10 +664,8 @@ document.addEventListener("DOMContentLoaded", () => {
             DOMSelectors.player_a_buttons.forEach(button => button.classList.add("dark"))
         }    
     }    
-            
-            
+                 
     DOMSelectors.player_a_buttons.forEach(buttona => buttona.addEventListener("click", function(event) {turnEnd(buttona, "a")}))
-
     DOMSelectors.player_b_buttons.forEach(buttonb => buttonb.addEventListener("click", function(event) {turnEnd(buttonb, "b")}))
 
     function turnEnd(button, x) {
@@ -700,7 +697,6 @@ document.addEventListener("DOMContentLoaded", () => {
             roll_count = 0
         }
     }
-    
         
     function gameEnd() {
         resetDice()
