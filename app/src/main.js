@@ -579,6 +579,17 @@ document.addEventListener("DOMContentLoaded", () => {
         )
     }
 
+    function resetBonus() {
+        const bonus_div_a = document.getElementById("player-a-bonus")
+        const bonus_div_b = document.getElementById("player-b-bonus")
+
+        bonus_div_a.setAttribute("class", "player-bonus text-1xl font-bold")
+        bonus_div_b.setAttribute("class", "player-bonus text-1xl font-bold")
+
+        bonus_div_a.parentElement.setAttribute("class", "column-buttons-bonus bg-violet-400 rounded-lg flex items-center justify-evenly text-red-700")
+        bonus_div_b.parentElement.setAttribute("class", "column-buttons-bonus bg-violet-400 rounded-lg flex items-center justify-evenly text-red-700")
+    }
+
     DOMSelectors.howtoplay.addEventListener("click", function(event) {
         let instructions = document.querySelector(".scrollable-div")
         instructions.classList.remove("hidden")
@@ -702,6 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resetDice()
         resetScores()
         resetButtons()
+        resetBonus()
 
         disableButtons()
         turn *= -1
@@ -710,20 +722,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 disableButtons()
 updateScores()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })
 
