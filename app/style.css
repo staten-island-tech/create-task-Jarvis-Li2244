@@ -48,6 +48,9 @@
 #unpressed{
     font-size: 1.5vw
 }
+#pressed{
+    font-size: 1.5vw
+}
 
 .player-a-score{
     font-size: 1.4vw

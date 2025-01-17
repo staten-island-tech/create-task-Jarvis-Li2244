@@ -252,10 +252,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (x == "a") {
             button.setAttribute("class", "column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-black")
-            button.setAttribute("id", "pressed")
+            button.firstElementChild.setAttribute("id", "pressed")
         } else {
             button.setAttribute("class", "column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-black")
-            button.setAttribute("id", "pressed")
+            button.firstElementChild.setAttribute("id", "pressed")
         }
 
         button.disabled = true
@@ -650,28 +650,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (turn == 1) {
             DOMSelectors.player_a_buttons.forEach(button => {
-                if (button.getAttribute("class") == "column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white") {
+                if (button.firstElementChild.getAttribute("id") == "unpressed") {
                     button.disabled = false
                 }
             })
 
             DOMSelectors.player_b_buttons.forEach(button => {
-                if (button.getAttribute("class") == "column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white") {
-                    button.disabled = true
-                }
+                button.disabled = true
             })
             DOMSelectors.player_b_buttons.forEach(button => button.classList.add("dark"))
         } else {
             DOMSelectors.player_b_buttons.forEach(button => {
-                if (button.getAttribute("class") == "column-buttons-b bg-violet-400 rounded-lg flex items-center justify-evenly text-white") {
+                if (button.firstElementChild.getAttribute("id") == "unpressed") {
                     button.disabled = false
                 }
             })
 
             DOMSelectors.player_a_buttons.forEach(button => {
-                if (button.getAttribute("class") == "column-buttons-a bg-violet-400 rounded-lg flex items-center justify-evenly text-white") {
-                    button.disabled = true
-                }
+                button.disabled = true
             })
             DOMSelectors.player_a_buttons.forEach(button => button.classList.add("dark"))
         }    
